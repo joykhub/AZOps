@@ -1,0 +1,17 @@
+Using powrshell create project in azure devops
+Open a PowerShell window.
+Login to your Azure DevOps organization using the "az devops login" command.
+az devops login --org https://dev.azure.com/{OrganizationName}/
+      Example: az devops login --org https://dev.azure.com/AZOps/
+Provide your PAT (Personal Access Token) as the authentication.
+Note: you can create your own PAT token from organizations settings then click user settings then choose personal access token.
+
+ 
+Then create new token (i am using full access for create new token).
+After created copy unique token ID and saved on your personal credentials vault.
+ 
+Create a new project using the "az devops project create" command.
+az devops project create --name {ProjectName} --process {ProcessName} --source-control {git|tfvc} --visibility {private|
+Example:  az devops project create --name Projectauto --process basic --source-control git --visibility private
+
+Done! This is simple project create using powershell.
